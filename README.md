@@ -9,7 +9,7 @@
 
 🌐 **[Try it live → saifdemos.github.io/Morse-Tree](https://saifdemos.github.io/Morse-Tree/)**
 
-![Morse Tree Demo](https://iili.io/CJRb2UJ.md.gif)
+![Morse Tree Demo](./demo.gif)
 
 ---
 
