@@ -2,7 +2,7 @@
 
 An interactive Morse code binary tree visualizer — navigate the tree by dot and dash, hear real tones, and watch the path light up in real time.
 
-![Morse Tree Demo](https://iili.io/CJRb2UJ.md.gif)
+![Morse Tree Demo](./demo.gif)
 
 ---
 
