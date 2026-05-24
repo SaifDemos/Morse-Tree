@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morse Code Tree</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="./style.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="logo">MORSE<span>.</span>TREE</div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <button id="mute-btn" onclick="toggleMute()" style="background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:1px;padding:4px 10px;cursor:pointer;transition:all 0.15s;">🔊 SOUND</button>
+  </div>
+</header>
+
+<main>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Current Letter Display -->
+    <div class="panel">
+      <div class="panel-title">Current Node</div>
+      <div class="current-display">
+        <div class="big-letter empty" id="big-letter">?</div>
+        <div class="morse-symbols" id="morse-symbols"></div>
+        <div class="path-status" id="path-status">navigate the tree</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="panel">
+      <div class="panel-title">Navigate</div>
+      <div class="btn-row">
+        <button class="btn btn-dot" onclick="navigate('.')">
+          <span>·</span>
+          <span class="btn-label">DOT</span>
+        </button>
+        <button class="btn btn-dash" onclick="navigate('-')">
+          <span>−</span>
+          <span class="btn-label">DASH</span>
+        </button>
+      </div>
+      <button class="btn-reset" onclick="reset()">⟳ RESET</button>
+    </div>
+
+    <!-- Trail -->
+    <div class="panel">
+      <div class="panel-title">Path Trail</div>
+      <div class="trail" id="trail">
+        <span class="trail-empty">—</span>
+      </div>
+    </div>
+
+    <!-- Keyboard -->
+    <div class="panel">
+      <div class="panel-title">Keyboard</div>
+      <div class="kbd-hints">
+        <span class="kbd"><b>.</b> dot</span>
+        <span class="kbd"><b>-</b> dash</span>
+        <span class="kbd"><b>R</b> reset</span>
+        <span class="kbd"><b>⌫</b> back</span>
+        <span class="kbd"><b>M</b> mute</span>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- TREE -->
+  <div class="tree-panel">
+    <div class="tree-header">
+      <div class="panel-title" style="margin:0">Morse Code Binary Tree</div>
+      <div class="tree-legend">
+        <span class="legend-dot">· right = dot</span>
+        <span class="legend-dash">− left = dash</span>
+        <button id="flip-btn" class="tree-flip-btn" onclick="toggleFlip()">⇄ FLIP</button>
+      </div>
+    </div>
+    <div class="tree-scroll">
+      <svg id="tree-svg" viewBox="0 0 1400 650" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Text input -->
+    <div class="panel">
+      <div class="panel-title">Text to Morse</div>
+      <textarea id="msg-input" placeholder="type a message..." maxlength="60" rows="3"></textarea>
+      <div id="morse-output" class="morse-output"></div>
+      <button id="copy-morse-btn" class="copy-btn" onclick="copyMorse()">📋 COPY</button>
+    </div>
+
+    <!-- Playback controls -->
+    <div class="panel">
+      <div class="panel-title">Playback</div>
+      <div class="playback-speed-row">
+        <span class="playback-label">Speed</span>
+        <input type="range" id="speed-slider" min="1" max="5" value="3" step="1">
+        <span id="speed-label" class="playback-label">3</span>
+      </div>
+      <button class="btn-play" id="play-btn" onclick="togglePlay()">▶ PLAY</button>
+      <div id="play-status" class="play-status">—</div>
+    </div>
+
+    <!-- Now playing -->
+    <div class="panel">
+      <div class="panel-title">Now Playing</div>
+      <div id="now-letter" class="now-letter">—</div>
+      <div id="now-morse" class="now-morse"></div>
+      <div id="char-queue" class="char-queue"></div>
+    </div>
+
+  </aside>
+</main>
+<script src="./visual.js"></script>
+<footer>· · − &nbsp; MORSE CODE NAVIGATOR &nbsp; − · ·</footer>
+</body>
+</html>
