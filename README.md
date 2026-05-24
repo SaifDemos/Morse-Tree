@@ -1,8 +1,15 @@
 # 🌳 Morse.Tree
 
-An interactive Morse code binary tree visualizer — navigate the tree by dot and dash, hear real tones, and watch the path light up in real time.
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=flat-square)](https://saifdemos.github.io/Morse-Tree/)
+[![HTML](https://img.shields.io/badge/built%20with-HTML%2FCSS%2FJS-orange?style=flat-square)]()
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-zero-blue?style=flat-square)]()
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](LICENSE)
 
-![Morse Tree Demo](./demo.gif)
+> Interactive Morse code binary tree — navigate dot by dot, hear real tones, and watch the path light up in real time.
+
+🌐 **[Try it live → saifdemos.github.io/Morse-Tree](https://saifdemos.github.io/Morse-Tree/)**
+
+![Morse Tree Demo](https://iili.io/CJRb2UJ.md.gif)
 
 ---
 
@@ -23,13 +30,17 @@ An interactive Morse code binary tree visualizer — navigate the tree by dot an
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Try It Now
 
-No build step, no dependencies, no framework — just open and run.
+No installation needed — just open the live site:
+
+**[https://saifdemos.github.io/Morse-Tree/](https://saifdemos.github.io/Morse-Tree/)**
+
+Or run it locally:
 
 ```bash
-git clone https://github.com/your-username/morse-tree.git
-cd morse-tree
+git clone https://github.com/saifdemos/Morse-Tree.git
+cd Morse-Tree
 open index.html        # macOS
 # or
 start index.html       # Windows
@@ -43,8 +54,8 @@ npx serve .
 
 | Key | Action |
 |---|---|
-| `.` or `E` | Navigate DOT |
-| `-` or `T` | Navigate DASH |
+| `.` | Navigate DOT |
+| `-` | Navigate DASH |
 | `R` / `Esc` | Reset to root |
 | `Backspace` | Go one step back |
 | `M` | Toggle mute |
@@ -54,7 +65,7 @@ npx serve .
 ## 🗂️ File Structure
 
 ```
-morse-tree/
+Morse-Tree/
 ├── index.html      # Layout and markup
 ├── style.css       # Dark theme, animations, responsive grid
 └── visual.js       # Tree data, SVG renderer, audio engine, playback
